@@ -1,0 +1,150 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DEPORTIVO</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="bebidas.html">BEBIDAS</a></li>
+                <li><a href="galletas.html">GALLETAS</a></li>
+                <li><a href="sabritas.html">SABRITAS</a></li>
+                <li><a href="cervezas.html">CERVEZAS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br>
+<center>
+<div class="flotante">
+      CATALOGO DE CERVEZAS
+        </div>
+<div class="contenido">
+        <div class="galeria">
+  <div class="card">
+    <img src="img/Modelo 473 ml.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Modelo 473 ml</div>
+      <div class="card-description">
+        $25.00 MXN<br>
+        Cerveza de color dorado, con un sabor<br>
+         equilibrado y un ligero toque amargo.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Modelo 473 ml')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+   <div class="card">
+    <img src="img/Corona 473 ml.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Corona 473 ml</div>
+      <div class="card-description">
+       $25.00 MXN<br>
+       Cerveza de tono dorado claro, con notas suaves<br>
+        y un sabor refrescante característico.
+  </div>
+  </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Corona 473 ml')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/Estrella 473 ml.jpg" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Estrella 473 ml</div>
+      <div class="card-description">
+       $25.00 MXN<br>
+       Cerveza con sabor a malta y notas amargas
+    </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Estrella 473 ml')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/caguama.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Corona Familiar</div>
+      <div class="card-description">
+      $45.00 MXN<br>
+     Presentación familiar de Corona Extra, <br>
+     reconocida por su color dorado y su sabor <br>
+     suave con notas ligeramente amargas.
+      </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Corona Familiar')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/Victoria 473 ml.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Victoria 473 ml</div>
+      <div class="card-description">
+      $25.00<br>
+      Cerveza de color ámbar, con notas de malta <br>
+      tostada y un sabor ligeramente amargo.
+    </div>
+    </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Victoria 473 ml')">Agregar al carrito</button>
+  <br>
+  <br>
+ <div class="carrito">
+    <h2>Carrito</h2>
+    <div class="contador">Productos en el carrito: <span id="cantidad">0</span></div>
+    <ul id="listaCarrito"></ul>
+  </div>
+  <br>
+  <br>
+  <br>
+  </center>
+ <script>
+    let cantidad = 0;
+    const listaCarrito = document.getElementById("listaCarrito");
+    const cantidadSpan = document.getElementById("cantidad");
+
+    function agregarAlCarrito(producto) {
+      cantidad++;
+      cantidadSpan.textContent = cantidad;
+
+      const li = document.createElement("li");
+      li.textContent = producto;
+      listaCarrito.appendChild(li);
+    }
+  </script>
+
+  <footer>
+    <span id="contador"></span>
+  </footer>
+
+  <script>
+    
+    let visitas = localStorage.getItem("contadorVisitas");
+    if (!visitas) {
+      visitas = 1;
+    } else {
+      visitas = parseInt(visitas) + 1;
+    }
+    localStorage.setItem("contadorVisitas", visitas);
+
+    document.getElementById("contador").textContent =
+      "Número de visitas a esta página: " + visitas;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DEPORTIVO</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="bebidas.html">BEBIDAS</a></li>
+                <li><a href="galletas.html">GALLETAS</a></li>
+                <li><a href="sabritas.html">SABRITAS</a></li>
+                <li><a href="cervezas.html">CERVEZAS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br>
+<center>
+<div class="flotante">
+      CATALOGO DE SABRITAS
+        </div>
+<div class="contenido">
+        <div class="galeria">
+  <div class="card">
+    <img src="img/originales.jpg" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Sabritas Originales</div>
+      <div class="card-description">
+        $22.00 MXN<br>
+        Crujientes papas fritas ideales para <br>
+        disfrutar como botana en cualquier momento.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Sabritas Originales')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+   <div class="card">
+    <img src="img/doritos.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Doritos Nacho</div>
+      <div class="card-description">
+       $20.00 MXN<br>
+       Botana de maíz con sabor a queso<br>
+       perfecta para disfrutar durante <br>
+       tus descansos o reuniones.
+  </div>
+  </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Doritos Nacho')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/takis.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Takis Fuego</div>
+      <div class="card-description">
+       $20.00 MXN<br>
+       Botana con un intenso sabor picante<br>
+       ideal para quienes disfrutan los <br>
+       sabores fuertes.
+    </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Takis Fuego')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/chetos.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Cheetos Flamin Hot</div>
+      <div class="card-description">
+      $18.00 MXN<br>
+     Botana con un intenso sabor picante, ideal <br>
+     para quienes prefieren los sabores condimentados.
+      </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Cheetos Flamin Hot')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/rufles.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Ruffles Queso</div>
+      <div class="card-description">
+      $22.00<br>
+      Papas crujientes con textura <br>
+      ondulada y delicioso sabor a queso.
+    </div>
+    </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Ruffles Queso')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/BotanaRancheritos50g.webp"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Rancheritos</div>
+      <div class="card-description">
+        $18.00 MXN<br>
+        Botana de maíz con un sabor <br>
+        característico a condimentos, <br>
+        perfecta para disfrutar como antojo.
+    </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Rancheritos')">Agregar al carrito</button>
+
+ <div class="carrito">
+    <h2>Carrito</h2>
+    <div class="contador">Productos en el carrito: <span id="cantidad">0</span></div>
+    <ul id="listaCarrito"></ul>
+  </div>
+  <br>
+  <br>
+  <br>
+  </center>
+ <script>
+    let cantidad = 0;
+    const listaCarrito = document.getElementById("listaCarrito");
+    const cantidadSpan = document.getElementById("cantidad");
+
+    function agregarAlCarrito(producto) {
+      cantidad++;
+      cantidadSpan.textContent = cantidad;
+
+      const li = document.createElement("li");
+      li.textContent = producto;
+      listaCarrito.appendChild(li);
+    }
+  </script>
+
+  <footer>
+    <span id="contador"></span>
+  </footer>
+
+  <script>
+    
+    let visitas = localStorage.getItem("contadorVisitas");
+    if (!visitas) {
+      visitas = 1;
+    } else {
+      visitas = parseInt(visitas) + 1;
+    }
+    localStorage.setItem("contadorVisitas", visitas);
+
+    document.getElementById("contador").textContent =
+      "Número de visitas a esta página: " + visitas;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DEPORTIVO</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <<li><a href="index.html">INICIO</a></li>
+                <li><a href="bebidas.html">BEBIDAS</a></li>
+                <li><a href="galletas.html">GALLETAS</a></li>
+                <li><a href="sabritas.html">SABRITAS</a></li>
+                <li><a href="cervezas.html">CERVEZAS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br>
+<center>
+<div class="flotante">
+      CATALOGO DE BEBIDAS
+        </div>
+<div class="contenido">
+        <div class="galeria">
+  <div class="card">
+    <img src="img/Coca500.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Coca-Cola 500ml</div>
+      <div class="card-description">
+        $16.00 MXN<br>
+        Refresco de cola ideal para acompañar <br>
+        tus comidas o disfrutar en cualquier <br>
+        momento del día.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Coca-Cola 500ml')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+   <div class="card">
+    <img src="img/coca2.5.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Coca-Cola 2.5L</div>
+      <div class="card-description">
+       $48.00 MXN<br>
+       Refresco clásico en presentación familiar<br>
+       perfecto para acompañar comidas y reuniones.
+  </div>
+  </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Coca-Cola 2.5L')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/POWER.jpg" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Powerade Moras 1L</div>
+      <div class="card-description">
+       $29.00 MXN<br>
+       Bebida deportiva refrescante,<br>
+       para acompañar tus actividades físicas.
+
+    </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Powerade Moras 1L')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/manzana.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Del Valle jugo de manzana 500ml</div>
+      <div class="card-description">
+        $20.00 MXN<br>
+        Bebida de manzana en presentación individual<br>
+        práctica para llevar y disfrutar durante el día.
+      </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Del Valle jugo de manzana 500ml')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/arizona.webp"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Arizona de fresa y kiwi 460ml</div>
+      <div class="card-description">
+      $23.00 MXN<br>
+      Bebida con una combinación de sabores <br>
+      de fresa y kiwi, ideal para disfrutar bien fría.
+    </div>
+    </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Arizona de fresa y kiwi 460ml')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/sidral.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Sidral Mundet 500 ml</div>
+      <div class="card-description">
+       $16.00 MXN<br>
+       Refresco de manzana con un sabor dulce <br>
+       y frutal, ideal para acompañar tus alimentos.
+    </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Sidral Mundet 500 ml')">Agregar al carrito</button>
+
+ <div class="carrito">
+    <h2>Carrito</h2>
+    <div class="contador">Productos en el carrito: <span id="cantidad">0</span></div>
+    <ul id="listaCarrito"></ul>
+  </div>
+  <br>
+  <br>
+  <br>
+  </center>
+ <script>
+    let cantidad = 0;
+    const listaCarrito = document.getElementById("listaCarrito");
+    const cantidadSpan = document.getElementById("cantidad");
+
+    function agregarAlCarrito(producto) {
+      cantidad++;
+      cantidadSpan.textContent = cantidad;
+
+      const li = document.createElement("li");
+      li.textContent = producto;
+      listaCarrito.appendChild(li);
+    }
+  </script>
+
+  <footer>
+    <span id="contador"></span>
+  </footer>
+
+  <script>
+    
+    let visitas = localStorage.getItem("contadorVisitas");
+    if (!visitas) {
+      visitas = 1;
+    } else {
+      visitas = parseInt(visitas) + 1;
+    }
+    localStorage.setItem("contadorVisitas", visitas);
+
+    document.getElementById("contador").textContent =
+      "Número de visitas a esta página: " + visitas;
+  </script>
+
+</body>
+</html>

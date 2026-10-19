@@ -1,0 +1,169 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DEPORTIVO</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="bebidas.html">BEBIDAS</a></li>
+                <li><a href="galletas.html">GALLETAS</a></li>
+                <li><a href="sabritas.html">SABRITAS</a></li>
+                <li><a href="cervezas.html">CERVEZAS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br><br>
+<center>
+<div class="flotante">
+      CATALOGO DE GALLETAS
+        </div>
+<div class="contenido">
+        <div class="galeria">
+  <div class="card">
+    <img src="img/emperador.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Emperador Piruetas</div>
+      <div class="card-description">
+        $20.00 MXN<br>
+        Crujientes galletas con relleno cremoso<br>
+        perfectas para disfrutar como antojo.
+      </div>
+    </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Emperador Piruetas')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+   <div class="card">
+    <img src="img/maravillas.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Maravillas</div>
+      <div class="card-description">
+       $18.00 MXN<br>
+       Galletas deliciosas para acompañar <br>
+       un vaso de leche, café o disfrutar<br>
+      como merienda.
+  </div>
+  </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Galletas Maravillas')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/galleta-gamesa-chokis-de-76-g.webp" width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Chokis Clasicas</div>
+      <div class="card-description">
+       $20.00 MXN<br>
+       Galletas con chispas de chocolate, ideales<br>
+      para quienes disfrutan de los antojos dulces.
+
+    </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Chokis Clasicas')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/cremax.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Cremax Chocolate</div>
+      <div class="card-description">
+      $22.00 MXN<br>
+      Galletas con un delicioso relleno cremoso<br>
+      perfectas para disfrutar a cualquier hora.
+      </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Cremax Chocolate')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/marias.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Marías</div>
+      <div class="card-description">
+      $20.00<br>
+      Galletas clásicas que puedes disfrutar <br>
+      solas o acompañadas de leche, café <br>
+      y otras bebidas.
+    </div>
+    </div>
+  </div>
+  <br>
+  <button class="boton" onclick="agregarAlCarrito('Marías')">Agregar al carrito</button>
+  <br>
+  <br>
+  <br>
+  <div class="card">
+    <img src="img/ricanelas.jpg"  width="500px" height="800px">
+    <div class="card-content">
+      <div class="card-title">Ricanelas</div>
+      <div class="card-description">
+       $20.00 MXN<br>
+       Galletas con un delicioso sabor a canela, <br>
+       ideales para acompañar una bebida caliente <br>
+       o disfrutar como merienda.
+    </div>
+    </div>
+  </div>
+  <br>
+<button class="boton" onclick="agregarAlCarrito('Ricanelas')">Agregar al carrito</button>
+
+ <div class="carrito">
+    <h2>Carrito</h2>
+    <div class="contador">Productos en el carrito: <span id="cantidad">0</span></div>
+    <ul id="listaCarrito"></ul>
+  </div>
+  <br>
+  <br>
+  <br>
+  </center>
+ <script>
+    let cantidad = 0;
+    const listaCarrito = document.getElementById("listaCarrito");
+    const cantidadSpan = document.getElementById("cantidad");
+
+    function agregarAlCarrito(producto) {
+      cantidad++;
+      cantidadSpan.textContent = cantidad;
+
+      const li = document.createElement("li");
+      li.textContent = producto;
+      listaCarrito.appendChild(li);
+    }
+  </script>
+
+  <footer>
+    <span id="contador"></span>
+  </footer>
+
+  <script>
+    
+    let visitas = localStorage.getItem("contadorVisitas");
+    if (!visitas) {
+      visitas = 1;
+    } else {
+      visitas = parseInt(visitas) + 1;
+    }
+    localStorage.setItem("contadorVisitas", visitas);
+
+    document.getElementById("contador").textContent =
+      "Número de visitas a esta página: " + visitas;
+  </script>
+
+</body>
+</html>
